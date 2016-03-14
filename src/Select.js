@@ -787,32 +787,34 @@ const Select = React.createClass({
 			'has-value': valueArray.length,
 		});
 		return (
-			<div ref="wrapper" className={className} style={this.props.wrapperStyle}>
-				{this.renderHiddenField(valueArray)}
-				<div ref="control"
-						 className="Select-control"
-						 style={this.props.style}
-						 onKeyDown={this.handleKeyDown}
-						 onMouseDown={this.handleMouseDown}
-						 onTouchEnd={this.handleTouchEnd}
-						 onTouchStart={this.handleTouchStart}
-						 onTouchMove={this.handleTouchMove}>
-					{this.renderValue(valueArray, isOpen)}
-					{this.renderInput(valueArray)}
-					{this.renderLoading()}
-					{this.renderClear()}
-					{this.renderArrow()}
-				</div>
-				{isOpen ? (
-					<div ref="menuContainer" className="Select-menu-outer" style={this.props.menuContainerStyle}>
-						<div ref="menu" className="Select-menu"
-								 style={this.props.menuStyle}
-								 onScroll={this.handleMenuScroll}
-								 onMouseDown={this.handleMouseDownOnMenu}>
-							{this.renderMenu(options, !this.props.multi ? valueArray : null, focusedOption)}
-						</div>
+			<div className="select-input-container">
+				<div ref="wrapper" className={className} style={this.props.wrapperStyle}>
+					{this.renderHiddenField(valueArray)}
+					<div ref="control"
+							 className="Select-control"
+							 style={this.props.style}
+							 onKeyDown={this.handleKeyDown}
+							 onMouseDown={this.handleMouseDown}
+							 onTouchEnd={this.handleTouchEnd}
+							 onTouchStart={this.handleTouchStart}
+							 onTouchMove={this.handleTouchMove}>
+						{this.renderValue(valueArray, isOpen)}
+						{this.renderInput(valueArray)}
+						{this.renderLoading()}
+						{this.renderClear()}
+						{this.renderArrow()}
 					</div>
-				) : null}
+					{isOpen ? (
+						<div ref="menuContainer" className="Select-menu-outer" style={this.props.menuContainerStyle}>
+							<div ref="menu" className="Select-menu"
+									 style={this.props.menuStyle}
+									 onScroll={this.handleMenuScroll}
+									 onMouseDown={this.handleMouseDownOnMenu}>
+								{this.renderMenu(options, !this.props.multi ? valueArray : null, focusedOption)}
+							</div>
+						</div>
+					) : null}
+				</div>
 			</div>
 		);
 	}
