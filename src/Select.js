@@ -9,6 +9,8 @@ import Async from './Async';
 import Option from './Option';
 import Value from './Value';
 
+import './../dist/react-select.css';
+
 function stringifyValue (value) {
 	if (typeof value === 'object') {
 		return JSON.stringify(value);
