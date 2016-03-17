@@ -1,5 +1,5 @@
 {
-  "name": "react-select",
+  "name": "react-select-plus",
   "version": "1.0.0-beta11",
   "description": "A Select control built with and for ReactJS",
   "main": "lib/Select.js",
